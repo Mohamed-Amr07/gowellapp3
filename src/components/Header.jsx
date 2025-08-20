@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X, Heart, Video } from 'lucide-react';
 
 const Header = ({ setCurrentView, mobileMenuOpen, setMobileMenuOpen }) => (
   <header className="bg-white shadow-lg sticky top-0 z-50">
@@ -24,6 +24,14 @@ const Header = ({ setCurrentView, mobileMenuOpen, setMobileMenuOpen }) => (
           <button onClick={() => setCurrentView('booking')} className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">
             Book Now
           </button>
+          {/* Add Video Consultation button */}
+          <button 
+            onClick={() => setCurrentView('consultations')} 
+            className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center"
+          >
+            <Video className="h-4 w-4 mr-1" />
+            My Consultations
+          </button>
         </nav>
         <div className="md:hidden">
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-gray-700 hover:text-blue-600">
@@ -39,6 +47,14 @@ const Header = ({ setCurrentView, mobileMenuOpen, setMobileMenuOpen }) => (
           <button onClick={() => { setCurrentView('destinations'); setMobileMenuOpen(false); }} className="block px-3 py-2 text-gray-700 hover:text-blue-600">Destinations</button>
           <button onClick={() => { setCurrentView('treatments'); setMobileMenuOpen(false); }} className="block px-3 py-2 text-gray-700 hover:text-blue-600">Treatments</button>
           <button onClick={() => { setCurrentView('booking'); setMobileMenuOpen(false); }} className="block px-3 py-2 text-gray-700 hover:text-blue-600">Book Now</button>
+          {/* Add Video Consultation button to mobile menu */}
+          <button 
+            onClick={() => { setCurrentView('consultations'); setMobileMenuOpen(false); }} 
+            className="flex items-center px-3 py-2 text-gray-700 hover:text-blue-600"
+          >
+            <Video className="h-4 w-4 mr-2" />
+            My Consultations
+          </button>
         </div>
       </div>
     )}
